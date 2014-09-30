@@ -15,5 +15,6 @@ $base-line-height: 1.5;
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import
   "base",
+  "page-heading",
   "syntax-highlighting"
 ;
