@@ -13,8 +13,11 @@ header {
 
   .title span {
     display: block;
-    font-size: 0.6em;
-    font-weight: normal;
+    font-size: 0.5em;
+    font-weight: 300;
+  }
+  .lead {
+    margin: 1em 0 2em;
   }
   a {
     margin-top: 4em;
