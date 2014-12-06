@@ -1,0 +1,11 @@
+.demo-wrapper {
+  width: 80%;
+}
+.demo {
+  overflow: hidden;
+}
+
+.demo .ember-list-item-view {
+  border-bottom: 1px solid #ddd;
+  padding: 0.4em;
+}

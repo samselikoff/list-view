@@ -1,6 +1,6 @@
 // create Ember application
 App = Ember.Application.create({
-  rootElement: '#demo'
+  rootElement: '.demo'
 });
 
 var content = [];
