@@ -567,6 +567,7 @@ export default Ember.Mixin.create({
     @event contentDidChange
   */
   contentDidChange: Ember.observer(function() {
+    this._bin.flush(0);
     addContentArrayObserver.call(this);
     syncChildViews.call(this);
   }, 'content'),
@@ -776,7 +777,7 @@ export default Ember.Mixin.create({
     // Support old and new Ember versions
     state = this._state || this.state;
 
-    this._bin.flush(start);
+    this._bin.flush(start - 1);
     Ember.propertyDidChange(this, 'isGrid');
     var length = this.get('content.length');
 
