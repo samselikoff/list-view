@@ -1,0 +1,16 @@
+.Main-demo {
+  margin-top: 30px;
+}
+.Main-demo__wrapper {
+  width: 70%;
+  margin: 20px auto 0;
+}
+.Main-demo__demo {
+  overflow: hidden;
+}
+.Main-demo__demo .ember-list-item-view {
+  border-bottom: 1px solid #ddd;
+  padding: 0.5em;
+  left: 0;
+  right: 0;
+}

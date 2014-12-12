@@ -1,0 +1,10 @@
+<!-- 
+  We could write a plugin to make this API cleaner, but then GH
+  couldn't build it for us.
+-->
+
+{% capture page %}
+  {% include {{include.page}} %}
+{% endcapture %}
+
+{{ page | markdownify }}

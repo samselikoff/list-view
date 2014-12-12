@@ -18,7 +18,7 @@ App.IndexController = Ember.ArrayController.extend({
 
 App.ExtendedVirtualList = Ember.VirtualListView.extend({
   model: content,
-  height: 500,
+  height: 250,
   rowHeight: 50,
   itemViewClass: Ember.ReusableListItemView.extend({
     templateName: 'row_item'
