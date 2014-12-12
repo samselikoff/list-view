@@ -1,5 +1,4 @@
-Installation
-------------
+## Installation
 
 There's no distribution of ListView on Bower, so you'll need to grab a copy yourself. There's also currently no Ember CLI addon built.
 

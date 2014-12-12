@@ -1,5 +1,4 @@
-Requirements
-------------
+## Requirements
 
 In addition to jQuery, Handlebars and Ember, you'll need to have [Zynga Scroller](https://github.com/zynga/scroller) installed to get a scroll bar on mobile.
 
