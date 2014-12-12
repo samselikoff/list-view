@@ -15,18 +15,4 @@
 
   {% include scripts.html %}
 
-  {% raw %}
-  <script type="text/x-handlebars" data-template-name="row_item">
-      {{name}}
-  </script>
-
-  <script type="text/x-handlebars" data-template-name="index">
-    {{!-- <h2>Virtual List View</h2>
-    {{view App.ExtendedVirtualList content=content}} --}}
-    {{#collection Ember.ListView content=controller height=500 rowHeight=50}}
-      {{name}}
-    {{/collection}}
-  </script>
-  {% endraw %}
-
 </html>

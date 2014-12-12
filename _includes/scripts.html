@@ -1,3 +1,25 @@
+<script>
+var metas = document.getElementsByTagName('meta');
+var i;
+if (navigator.userAgent.match(/iPhone/i)) {
+  for (i=0; i<metas.length; i++) {
+    if (metas[i].name == "viewport") {
+      metas[i].content = "width=device-width, minimum-scale=1.0, maximum-scale=1.0";
+    }
+  }
+  document.addEventListener("gesturestart", gestureStart, false);
+}
+function gestureStart() {
+  for (i=0; i<metas.length; i++) {
+    if (metas[i].name == "viewport") {
+      metas[i].content = "width=device-width, minimum-scale=0.25, maximum-scale=1.6";
+    }
+  }
+}
+</script>
+
+<script src="bower_components/scroller/src/Animate.js"></script>
+<script src="bower_components/scroller/src/Scroller.js"></script>
 <script src="bower_components/jquery/dist/jquery.min.js"></script>
 <script src="bower_components/handlebars/handlebars.min.js"></script>
 <script src="bower_components/ember/ember.js"></script>
@@ -5,3 +27,19 @@
 
 
 <script src="js/app.js"></script>
+
+{% raw %}
+
+<script type="text/x-handlebars" data-template-name="row_item">
+  {{name}}
+</script>
+<script type="text/x-handlebars" data-template-name="index">
+  {{view App.ExtendedVirtualList content=content}}
+{{!--   <h2>List View</h2>
+  {{#collection Ember.ListView content=controller height=500 rowHeight=50}}
+    {{name}}
+  {{/collection}}
+ --}}
+ </script>
+
+{% endraw %}
