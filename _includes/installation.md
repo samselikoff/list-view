@@ -1,19 +1,23 @@
 Installation
 ------------
 
-The dist isn't stored in bower, so you'll need to grab it yourself. There's also currently no Ember CLI addon built for this.
+There's no distribution of ListView on Bower, so you'll need to grab a copy yourself. There's also currently no Ember CLI addon built.
+
+To install,
 
 1. Grab the latest [development](http://builds.emberjs.com/list-view/list-view-latest.js) or [minified](http://builds.emberjs.com/list-view/list-view-latest.min.js) build. 
 
-    Alternatively, for a specific version, follow the [build](#build) instructions below.
+    Alternatively, follow the build instructions below to get a specific version.
 
-2. In your Ember CLI project, `mkdir vendor/list-view`, then put the build in that folder.
+2. Put the dist in your Ember CLI under
 
-    You'll end up with `vendor/list-view/list-view.js`.
+        /vendor/list-view/list-view.js
 
 3. Add the line
 
         "list-view": "0.0.5"
 
-    to your `devDependencies` hash in your project's `package.json` file. Ember CLI will now import ListView into your project.
+    to the `devDependencies` hash of your project's `package.json` file.
+
+Ember CLI will now import ListView into your project.
 
