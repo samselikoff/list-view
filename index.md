@@ -2,7 +2,7 @@
 layout: default
 ---
 
-<p class='lead'>Large HTML lists can kill performance.</p>
+<p class='lead'>Large HTML lists kill performance.</p>
 
 By only rendering what's currently visible, **ListView** lets you use large lists without slowing down your app.
 
