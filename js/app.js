@@ -6,6 +6,10 @@ var App = Ember.Application.create({
   rootElement: '.mobile-demo'
 });
 
+App.Router = Ember.Router.extend({
+  location: 'none'
+});
+
 var content = [];
 for (var i = 0; i < 10000; i++) {
   content.push({name: 'Item ' + i});

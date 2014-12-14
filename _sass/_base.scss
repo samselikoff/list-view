@@ -1,3 +1,6 @@
+body {
+  padding-top: 50px; // for fixed-nav header
+}
 ol {
   padding-left: 25px;
 }
@@ -15,7 +18,9 @@ pre {
 h2 {
   border-bottom: 1px solid #DBDBDB;
   padding-bottom: 5px;
-  margin-top: 35px;
+  // margin-top: 35px;
+  padding-top: 60px;
+  margin-top: 0;
 }
 h3 {
   font-size: 21px;
