@@ -2,17 +2,19 @@
 
 First, let's create a template:
 
-{% highlight html %}{% raw %}
+{% highlight html %}
+{% raw %}
 <script type="ext/x-handlebars" data-template-name="index">
   {{#collection Ember.ListView contentBinding="controller" height=500 rowHeight=50 width=500}}
     {{name}}
   {{/collection}}
 </script>
-{% endraw %}{% endhighlight %}
+{% endraw %}
+{% endhighlight %}
 
 Next, let's feed our template with some data:
 
-``` javascript
+{% highlight js %}
 {% raw %}
 // create Ember application
 App = Ember.Application.create();
@@ -28,6 +30,6 @@ App.IndexRoute = Ember.Route.extend({
   }
 });
 {% endraw %}
-```
+{% endhighlight %}
 
 Shazam! You should be able to see a scrollable area with 10,000 items in it.

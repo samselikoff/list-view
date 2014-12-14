@@ -3,4 +3,12 @@ ol {
 }
 .callout {
   background-color: #F0F04E;
+  display: inline-block;
+}
+pre {
+  word-wrap: normal;
+
+  code {
+    white-space: pre;
+  }
 }
