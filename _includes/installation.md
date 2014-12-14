@@ -2,7 +2,7 @@
 
 There's no distribution of ListView on Bower, so you'll need to grab a copy yourself. There's also currently no Ember CLI addon built.
 
-**JS**
+### JS
 
 To install,
 
@@ -22,7 +22,7 @@ To install,
 
 Ember CLI will now import ListView into your project.
 
-**CSS**
+### CSS
 
 The project also has the following required CSS. Be sure to include it in your project.
 

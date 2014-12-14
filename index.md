@@ -25,3 +25,9 @@ The APIs of the two views are the same, but you should use the latter when on mo
 {% include markdownify.html page="installation.md" %}
 
 {% include markdownify.html page="usage.md" %}
+
+{% include markdownify.html page="development.md" %}
+
+{% include markdownify.html page="faq.md" %}
+
+{% include markdownify.html page="thanks.md" %}

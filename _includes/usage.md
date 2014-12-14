@@ -6,8 +6,8 @@ Suppose our index controller's model is a 10,000-item array:
 
 {% highlight js %}
 {% raw %}
-//controllers/index.js
-App.IndexRoute = Ember.Route.extend({
+//routes/index.js
+export default Ember.Route.extend({
   model: function() {
     var items = [];
     for (var i = 0; i < 10000; i++) {
@@ -36,45 +36,91 @@ Here's how we could use ListView in our index template:
 
 You should now have a fast scrollable area with 10,000 items in it.
 
-### Params
+### Parameters
 
-<table class='table table-bordered table-hover'>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Required?</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code>contentBinding</code></td>
-      <td>Yes</td>
-      <td>The content to display in the list</td>
-    </tr>
-    <tr>
-      <td><code>height</code></td>
-      <td>Yes</td>
-      <td>Overall container height</td>
-    </tr>
-    <tr>
-      <td><code>rowHeight</code></td>
-      <td>Yes</td>
-      <td>Height of each element in the list</td>
-    </tr>
-    <tr>
-      <td><code>width</code></td>
-      <td></td>
-      <td>Overall container width</td>
-    </tr>
-    <tr>
-      <td><code>elementWidth</code></td>
-      <td></td>
-      <td>Width of each element in the list. For a multi-column list, specify both <code>width</code> and <code>elementWidth</code>.</td>
-    </tr>
-  </tbody>
-</table>
-Notes:
+<span class='required'></span> denotes a required param.
 
-  - You **must** pass in the `height` and `rowHeight` params, as they are used in ListView's calculations.
+<dl class='dl-horizontal'>
+  <dt class='required'>contentBinding</dt>
+  <dd>
+    <em>array</em>
+    <p>The content to display in the list</p>
+  </dd>
 
+  <dt class='required'>height</dt>
+  <dd>
+    <em>number</em>
+    <p>Overall container height</p>
+  </dd>
+
+  <dt class='required'>rowHeight</dt>
+  <dd>
+    <em>number</em>
+    <p>Height of each element in the list</p>
+  </dd>
+
+  <dt>width</dt>
+  <dd>
+    <em>number</em>
+    <p>Overall container width</p>
+  </dd>
+
+  <dt>elementWidth</dt>
+  <dd>
+    <em>number</em>
+    <p>Width of each element in the list. For a multi-column list, specify both <code>width</code> and <code>elementWidth</code>.</p>
+  </dd>
+
+  <dt>itemViewClass</dt>
+  <dd>
+    <em>[subclass of Ember.ListItemView]</em>
+    <p>The template to used to render each item in the list. See the example below for details.</p>
+  </dd>
+</dl>
+
+### Customizing each item's template
+
+As shown above, you can pass in a block to the `collection` helper and customize the appearance of each row item directly in your template.
+
+However, you can also define your own view. (Why would someone want to do this?). First, create a new template
+
+{% highlight handlebars %}
+{% raw %}
+{{!-- templates/my-row-item.js --}}
+<div>
+  <p><strong>{{name}}</strong></p>  
+  <p>{{description}}</p>
+</div>
+{% endraw %}
+{% endhighlight %}
+
+then create a new view that extends `Ember.ListView`, specifying the template via the following:
+
+{% highlight js %}
+//views/my-list-view
+export default Ember.ListView.extend({
+  height: 500,
+  rowHeight: 50,
+  itemViewClass: Ember.ListItemView.extend({templateName: "my-row-item"})
+});
+{% endhighlight %}
+
+Note that `itemViewClass` must be an extension of `Ember.ListItemView`, and its `templateName` property must be set to your new desired template.
+
+### Changing height and width of `Ember.ListView` during runtime
+
+The height and width of the entire ListView can be adjusted at run-time. Existing row items will automatically be repositioned, and any new items that are needed will be created.
+
+To change (does user need to implement adjustLayout?)
+
+{% highlight js %}
+//views/my-list-view
+export default Ember.ListView.extend({
+  height: 500,
+  width: 960,
+  adjustLayout: function(new_width, new_height) {
+    this.set('width', new_width);
+    this.set('height', new_height);
+  }
+});
+{% endhighlight %}
