@@ -1,18 +1,8 @@
 ## Usage
 
-First, let's create a template:
+**Basic**
 
-{% highlight html %}
-{% raw %}
-<script type="ext/x-handlebars" data-template-name="index">
-  {{#collection Ember.ListView contentBinding="controller" height=500 rowHeight=50 width=500}}
-    {{name}}
-  {{/collection}}
-</script>
-{% endraw %}
-{% endhighlight %}
-
-Next, let's feed our template with some data:
+Suppose we have a controller whose model is a 10,000 item array:
 
 {% highlight js %}
 {% raw %}
@@ -32,4 +22,21 @@ App.IndexRoute = Ember.Route.extend({
 {% endraw %}
 {% endhighlight %}
 
-Shazam! You should be able to see a scrollable area with 10,000 items in it.
+Here's a bare-bones example of a template using ListView:
+
+{% highlight html %}
+{% raw %}
+<script type="ext/x-handlebars" data-template-name="index">
+  {{#collection Ember.ListView contentBinding="controller" height=500 rowHeight=50 width=500}}
+    {{name}}
+  {{/collection}}
+</script>
+{% endraw %}
+{% endhighlight %}
+
+You should be able to see a scrollable area with 10,000 items in it.
+
+Notes:
+
+  - You **must** pass in the `height` and `rowHeight` params, as they are required for ListView's calculations.
+
