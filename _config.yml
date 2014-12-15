@@ -3,7 +3,7 @@ title: Ember List View
 description: > # this means to ignore newlines until "baseurl:"
   An incremental rendering list view for Ember.js
 # baseurl: "/list-view" # the subpath of your site, e.g. /blog/
-baseurl: "list-view" # the subpath of your site, e.g. /blog/
+baseurl: "/list-view" # the subpath of your site, e.g. /blog/
 url: "http://emberjs.com/" # the base hostname & protocol for your site
 
 # Build settings
