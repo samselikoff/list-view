@@ -7,7 +7,7 @@ layout: default
 By only rendering what's currently visible, **ListView** lets you use large lists without slowing down your app.
 
 <div class="Main-demo">
-  <p>Here's a demo with <strong>10,000 items</strong>:</p>
+  <p>Here's a demo with <strong>10,000 items</strong>. Scroll away!</p>
   
   <div class='panel panel-default clearfix Main-demo__wrapper'>
     <div class="panel-heading">List View</div>
@@ -17,7 +17,7 @@ By only rendering what's currently visible, **ListView** lets you use large list
 </div>
 
 <h3 class='callout'>Important</h3>
-The rest of these docs will reference `Ember.ListView`, but this library also includes `Ember.VirtualListView`.
+While the rest of these docs will reference `Ember.ListView`, this library also contains `Ember.VirtualListView`.
 The APIs of the two views are the same, but you should use the latter when on mobile.
 
 {% include markdownify.html page="requirements.md" %}
