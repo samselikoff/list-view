@@ -1,42 +1,16 @@
-## Usage
+## Usage and Examples
 
-### Basic
+### Overview
 
-Suppose our index controller's model is a 10,000-item array:
+There are two classes that come with ListView: `Ember.ListView`, and `Ember.ListItemView`.
 
-{% highlight js %}
-{% raw %}
-//routes/index.js
-export default Ember.Route.extend({
-  model: function() {
-    var items = [];
-    for (var i = 0; i < 10000; i++) {
-      items.push({name: "Item " + i});
-    }
-    return items;
-  }
-});
-{% endraw %}
-{% endhighlight %}
+  - `ListView` is a container view. It manages the content array, creating or repositioning items when necessary.
+  - `ListItemView` is the view that backs each individual item.
+  - (`ReusableListItemView`?)
 
-Here's how we could use ListView in our index template:
+(elaborate...)
 
-{% highlight handlebars %}
-{% raw %}
-{{!-- templates/index.hbs --}}
-{{#collection Ember.ListView
-    contentBinding="controller"
-    height=500
-    rowHeight=50
-    width=500}}
-  {{name}}
-{{/collection}}
-{% endraw %}
-{% endhighlight %}
-
-You should now have a fast scrollable area with 10,000 items in it.
-
-### Parameters
+Here are the params...
 
 <span class='required'></span> denotes a required param.
 
@@ -77,6 +51,66 @@ You should now have a fast scrollable area with 10,000 items in it.
     <p>The template to used to render each item in the list. See the example below for details.</p>
   </dd>
 </dl>
+
+### Basic example
+
+Suppose our index controller's model is a 10,000-item array:
+
+{% highlight js %}
+{% raw %}
+//routes/index.js
+export default Ember.Route.extend({
+  model: function() {
+    var items = [];
+    for (var i = 0; i < 10000; i++) {
+      items.push({name: "Item " + i});
+    }
+    return items;
+  }
+});
+{% endraw %}
+{% endhighlight %}
+
+Here's how we could use ListView in our index template:
+
+{% highlight handlebars %}
+{% raw %}
+{{!-- templates/index.hbs --}}
+{{#collection Ember.ListView
+    contentBinding="controller"
+    height=500
+    rowHeight=50
+    width=500}}
+  {{name}}
+{{/collection}}
+{% endraw %}
+{% endhighlight %}
+
+[js bin]
+
+### Basic grid example
+
+explanation
+
+[js bin]
+
+### List with groups example
+
+explanation
+
+[js bin]
+
+### List with various heights example
+
+explanation
+
+[js bin]
+
+### Grid with various heights example (coming soon)
+
+explanation
+
+[js bin]
 
 ### Customizing each item's template
 
@@ -124,3 +158,9 @@ export default Ember.ListView.extend({
   }
 });
 {% endhighlight %}
+
+### Full table example (maybe this should be an independent addon)
+
+### Autosizing parentView example
+
+### Link to addepars select box as it uses list-view

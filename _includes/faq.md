@@ -10,7 +10,7 @@ Take a look at the [unit tests](https://github.com/emberjs/list-view/blob/master
 
 Touch-based mobile devices have different scrolling APIs than traditional browsers: `touchstart`, `touchmove` and `touchend` vs `onscroll`. Also, when a swipe is used to scroll content, many mobile devices simulate momentum by decelerating the swiped content slowly. During this momentum phase, no DOM events are emitted.
 
-For these reasons, a separate implementation of ListView is needed for mobile devices. VirtualListView combines 3D CSS transforms with momentum-based JavaScript animation to simulate scrolling behavior. In addition, it will often outperform the browser's native scroll.
+For these reasons, a separate implementation of ListView is needed for mobile devices. VirtualListView combines 3D CSS transforms with momentum-based JavaScript animation to simulate scrolling behavior. It also often outperforms the browser's native scroll.
 
 ### Why do we use the `collection` helper?
 
