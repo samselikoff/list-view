@@ -90,9 +90,11 @@ Here's how we could use ListView in our index template:
 
 ### Basic grid example
 
-explanation
+To make your list into a grid, specify both `width` and `element-width`.
 
-[js bin]
+The example below has a `width` of 500 and an `element-width` of 100, so the grid is 5 columns wide.
+
+<a class="jsbin-embed" href="http://emberjs.jsbin.com/raveho/4/embed?html,js,output">Ember Starter Kit</a><script src="http://static.jsbin.com/js/embed.js"></script>
 
 ### List with groups example
 
