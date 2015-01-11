@@ -11,8 +11,11 @@ By only rendering what's currently visible, **ListView** lets you use large list
   
   <div class='panel panel-default clearfix Main-demo__wrapper'>
     <div class="panel-heading">List View</div>
-    <div class="Main-demo__demo mobile-demo visible-xs-block visible-sm-block"></div>
-    <div class="Main-demo__demo visible-md-block visible-lg-block"></div>
+    <div class="Main-demo__demo mobile-demo"></div>
+
+    <!-- TODO: Add mobile/virtuallistview and desktop/listview examples -->
+    <!-- <div class="Main-demo__demo mobile-demo visible-xs-block visible-sm-block"></div>
+    <div class="Main-demo__demo visible-md-block visible-lg-block"></div> -->
   </div>
 </div>
 
